@@ -10,24 +10,39 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/cabecalho.css">
     <title>E-Commerce Master</title>
 </head>
 
 <body>
-    <header>
-        <img src="./assets/images/logo.svg" alt="Logo">
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#faq">Perguntas Frequentes </a></li>
-                <li><a href="#contato">Fale Conosco</a></li>
-            </ul>
-            <button>
-                <img src="./assets/images/cart-icon.svg" alt="Carrinho de Compras">
-                <span>0</span>
-            </button>
+    <header class="cabecalho">
+        <div class="header-conteudo">
+            <div class="header-esquerda">
+
+                <button class="menu-hamburguer">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <a class="logo" href="/">
+                    <img src="./assets/images/logo.svg" alt="Logo">
+                </a>
+            </div>
+            <nav class="menu-principal" aria-label="Menu Principal">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#faq">Perguntas Frequentes </a></li>
+                    <li><a href="#contato">Fale Conosco</a></li>
+                </ul>
+            </nav>
+                <button class="botao-carrinho" data-micromodal-trigger="modal-1" aria-haspopup="dialog" aria-controls="modal-1">
+                    <img src="./assets/images/icone_carrinho.svg" alt="Carrinho de Compras">
+                    <span>0</span>
+                </button>
+        </div>
     </header>
     <main>
         <section>
