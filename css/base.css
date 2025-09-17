@@ -2,10 +2,11 @@
     --cor-primaria: #6528d3;
     --cor-primaria-hover: #834de8;
     --cor-secundaria: #4a90e2;
-    --cor-fundo: #333;
+    --cor-fundo: #1a1a1a;
     --cor-texto: #f5f5f5;
     --cor-cinza-escuro: #29272a;
     --cor-cinza-claro: #ededed;
+    --cor-roxa-claro: #bca2ed;
     --espacamento: 16px;
     --raio-borda: 8px;
 }
@@ -13,7 +14,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--cor-fundo);
-    color: var(--cor-texto);
+    color: var(--cor-texto);    
     margin: 0;
     padding: 0;
     min-height: 100vh;

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/cabecalho.css">
     <link rel="stylesheet" href="css/produtos.css">
+    <link rel="stylesheet" href="css/rodape.css">
     <title>E-Commerce Master</title>
 </head>
 
@@ -39,10 +40,11 @@
                     <li><a href="#contato">Fale Conosco</a></li>
                 </ul>
             </nav>
-                <button class="botao-carrinho" data-micromodal-trigger="modal-1" aria-haspopup="dialog" aria-controls="modal-1">
-                    <img src="./assets/images/icone_carrinho.svg" alt="Carrinho de Compras">
-                    <span>0</span>
-                </button>
+            <button class="botao-carrinho" data-micromodal-trigger="modal-1" aria-haspopup="dialog"
+                aria-controls="modal-1">
+                <img src="./assets/images/icone_carrinho.svg" alt="Carrinho de Compras">
+                <span>0</span>
+            </button>
         </div>
     </header>
     <main>
@@ -88,49 +90,48 @@
             </ul>
         </section>
     </main>
-    <footer>
-        <nav>
-            <h3>Instucional</h3>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#faq">Perguntas Frequentes </a></li>
-                <li><a href="#contato">Fale Conosco</a></li>
-            </ul>
-        </nav>
-        <nav>
-            <h3>Ajuda</h3>
-            <ul>
-                <li><a href="#trocas">Trocas e Devoluções</a></li>
-                <li><a href="#termos">Termos e Condições</a></li>
-                <li><a href="#politica">Política de Privacidade</a></li>
-                <li><a href="#padrao">Padrão de Qualidade</a></li>
-            </ul>
-        </nav>
-        <nav>
-            <h3>Endereço</h3>
-            <ul>
-                <li>Rua Vale do Silicio</li>
-                <li>São Francisco, Califórnia</li>
-                <li>Estados Unidos da América</li>
-                <li><a href="#">(34) 11234-5678</a></li>
-                <li><a href="#">vendas@ecommerci.com</a></li>
-            </ul>
-        </nav>
-        <div>
-            <span>2024 © E-Commerce Master. Todos os direitos reservados.</span>
-            <span>Desenvolvido por Alura.</span>
+    <footer class="rodape">
+        <div class="container">
+            <nav>
+                <h3>Instucional</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#faq">Perguntas Frequentes </a></li>
+                    <li><a href="#contato">Fale Conosco</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <h3>Ajuda</h3>
+                <ul>
+                    <li><a href="#trocas">Trocas e Devoluções</a></li>
+                    <li><a href="#termos">Termos e Condições</a></li>
+                    <li><a href="#politica">Política de Privacidade</a></li>
+                    <li><a href="#padrao">Padrão de Qualidade</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <h3>Endereço</h3>
+                <ul>
+                    <li>Rua Vale do Silicio</li>
+                    <li>São Francisco, Califórnia</li>
+                    <li>Estados Unidos da América</li>
+                    <li><a href="#">(34) 11234-5678</a></li>
+                    <li><a href="#">vendas@ecommerci.com</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="copyright">
+            <span>2025 © E-Commerce Master. Todos os direitos reservados.</span>
+            <span>Desenvolvido por Omega Dev.</span>
         </div>
     </footer>
 
-    <!-- [1] -->
-    <div id="modal-1" class="modal" aria-hidden="true">
+    <!-- <div id="modal-1" class="modal" aria-hidden="true">
 
-        <!-- [2] -->
         <div tabindex="-1" data-micromodal-close>
 
-            <!-- [3] -->
             <div role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
 
 
@@ -139,7 +140,6 @@
                         Carrinho de Compras
                     </h2>
 
-                    <!-- [4] -->
                     <button aria-label="Close modal" data-micromodal-close></button>
                 </header>
 
@@ -179,7 +179,7 @@
 
             </div>
         </div>
-    </div>
+    </div> -->
 
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js
 "></script>

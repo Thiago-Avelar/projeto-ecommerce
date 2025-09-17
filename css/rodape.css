@@ -1,0 +1,63 @@
+.rodape {
+    grid-area: footer;
+    background-color: var(--cor-cinza-escuro);
+}
+
+.rodape .container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.rodape nav h3 {
+    color: var(--cor-texto);
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1rem;
+}
+
+.rodape nav ul li {
+    margin-bottom: 0.7rem;
+    color: var(--cor-roxa-claro);
+}
+
+.rodape nav a {
+    color: var(--cor-roxa-claro);
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+.rodape nav a:hover {
+    color: var(--cor-texto);
+}
+
+.rodape .copyright {
+    color: var(--cor-cinza-claro);
+    background-color: var(--cor-fundo);
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+}
+
+@media (min-width: 1024px) {
+    .rodape .container {
+        flex-direction: row;
+        width: 100%;
+        gap: 13rem;
+        padding: 4rem 1rem;
+    }
+}
+
+@media (min-width: 1120px) {
+    .rodape .container {
+        max-width: 1170px;
+        margin: 0 auto;
+    }
+}
