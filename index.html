@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/cabecalho.css">
     <link rel="stylesheet" href="css/produtos.css">
     <link rel="stylesheet" href="css/rodape.css">
+    <link rel="stylesheet" href="css/modal-carrinho.css">
     <title>E-Commerce Master</title>
 </head>
 
@@ -128,11 +129,11 @@
         </div>
     </footer>
 
-    <!-- <div id="modal-1" class="modal" aria-hidden="true">
+    <div id="modal-1" class="modal" aria-hidden="true">
 
         <div tabindex="-1" data-micromodal-close>
 
-            <div role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+            <div class="container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
 
 
                 <header>
@@ -140,46 +141,68 @@
                         Carrinho de Compras
                     </h2>
 
-                    <button aria-label="Close modal" data-micromodal-close></button>
+                    <button class="fechar" aria-label="Close modal" data-micromodal-close></button>
                 </header>
 
                 <div id="modal-1-content">
                     <table>
                         <thead>
                             <tr>
-                                <th>Produto</th>
+                                <th class="th-produto">Produto</th>
                                 <th>Descrição</th>
                                 <th>Preço</th>
                                 <th>Quantidade</th>
-                                <th>Total</th>
+                                <th class="th-total">Total</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>
+                                <td class="td-produto">
                                     <img src="./assets/images/camiseta_roxa.jpg" alt="Camiseta Roxa">
                                 </td>
                                 <td>Camiseta Roxa</td>
-                                <td>R$ 79,90</td>
-                                <td><input type="number" value="1" min="1"></td>
-                                <td>R$ 79,90</td>
+                                <td class="td-preco-unitario">R$ 79,90</td>
+                                <td class="td-quantidade"><input type="number" value="1" min="1"></td>
+                                <td class="td-preco-total">R$ 79,90</td>
                                 <td>
-                                    <button id="deletar" aria-label="Remover produto do carrinho">Deletar</button>
+                                    <button class="btn-deletar" id="deletar" aria-label="Remover produto do carrinho"></button>
+                                </td>
+                            <tr>
+                                <td class="td-produto">
+                                    <img src="./assets/images/camiseta_roxa.jpg" alt="Camiseta Roxa">
+                                </td>
+                                <td>Camiseta Roxa</td>
+                                <td class="td-preco-unitario">R$ 79,90</td>
+                                <td class="td-quantidade"><input type="number" value="1" min="1"></td>
+                                <td class="td-preco-total">R$ 79,90</td>
+                                <td>
+                                    <button class="btn-deletar" id="deletar" aria-label="Remover produto do carrinho"></button>
+                                </td>
+                            <tr>
+                                <td class="td-produto">
+                                    <img src="./assets/images/camiseta_roxa.jpg" alt="Camiseta Roxa">
+                                </td>
+                                <td>Camiseta Roxa</td>
+                                <td class="td-preco-unitario">R$ 79,90</td>
+                                <td class="td-quantidade"><input type="number" value="1" min="1"></td>
+                                <td class="td-preco-total">R$ 79,90</td>
+                                <td>
+                                    <button class="btn-deletar" id="deletar" aria-label="Remover produto do carrinho"></button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <div>
-                        <span id="total-carrinho">Total: R$ 79,90</span>
-                        <button>Finalizar Compra</button>
+                    <div class="container-preco-finalizar">
+                        <span class="total-carrinho" id="total-carrinho">Total: R$ 79,90</span>
+                        <button class="finalizar-compra">Finalizar Compra</button>
                     </div>
                 </div>
 
             </div>
         </div>
-    </div> -->
+    </div>
 
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js
 "></script>
