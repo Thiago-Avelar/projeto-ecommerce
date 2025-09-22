@@ -22,6 +22,10 @@ main .produtos-lista .produto {
     max-width: 368px;
     border-radius: 14px;
     gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--cor-cinza-escuro);
 }
 
 main .produtos-lista img {
@@ -50,6 +54,7 @@ main .info-produto {
     gap: 0.5rem;
     justify-content: space-between;
     padding: 0 1.5rem 1.5rem;
+    border-radius: 0 0 14px 14px;
 }
 
 main .info-produto span {
@@ -72,7 +77,7 @@ main .info-produto .preco {
     margin-top: 0.5rem;
 }
 
-main .info-produto button {
+main .info-produto .adicionar-carrinho {
     background-color: var(--cor-primaria);
     color: var(--cor-texto);
     border: none;
