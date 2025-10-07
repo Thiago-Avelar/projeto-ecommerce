@@ -43,6 +43,7 @@ botoesAdicionarAoCarrinho.forEach(botao => {
         }
 
         SalvarProdutosNoCarrinho(carrinho);
+        AtualizarContadorCarrinho();
     });
 });
 
@@ -54,3 +55,15 @@ function ObterProdutosDoCarrinho() {
     const produtos = localStorage.getItem('carrinho');
     return produtos ? JSON.parse(produtos) : [];
 }
+
+function AtualizarContadorCarrinho() {
+    const carrinho = ObterProdutosDoCarrinho();
+    let total = 0;
+    carrinho.forEach(produto => {
+        total += produto.quantidade;
+    });
+
+    document.getElementById('contador-carrinho').textContent = total;
+}
+
+AtualizarContadorCarrinho();
