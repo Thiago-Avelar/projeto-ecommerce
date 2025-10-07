@@ -44,6 +44,7 @@ botoesAdicionarAoCarrinho.forEach(botao => {
 
         SalvarProdutosNoCarrinho(carrinho);
         AtualizarContadorCarrinho();
+        RenderizarTabelaCarrinho();
     });
 });
 
@@ -63,7 +64,32 @@ function AtualizarContadorCarrinho() {
         total += produto.quantidade;
     });
 
-    document.getElementById('contador-carrinho').textContent = total;
+    document.getElementById("total-carrinho").textContent = total;
 }
 
 AtualizarContadorCarrinho();
+
+function RenderizarTabelaCarrinho() {
+    const produtos = ObterProdutosDoCarrinho();
+    const corpoTabela = document.querySelector('#modal-1-content table tbody');
+    corpoTabela.innerHTML = '';
+
+    produtos.forEach(produto => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td class="td-produto">
+                                    <img
+                                     src="${produto.imagem}"
+                                     alt="${produto.nome}">
+                                </td> 
+                                <td>${produto.nome}</td>
+                                <td class="td-preco-unitario">R$ ${produto.preco.toFixed(2).replace('.', ',')}</td>
+                                <td class="td-quantidade"><input type="number" value="${produto.quantidade}" min="1"></td>
+                                <td class="td-preco-total">R$ ${produto.preco.toFixed(2).replace('.', ',')}</td>
+                                <td>
+                                    <button class="btn-deletar" data-id="${produto.id}" id="deletar" aria-label="Remover produto do carrinho"></button>
+                                </td>`
+        corpoTabela.appendChild(tr);
+    });
+}
+
+RenderizarTabelaCarrinho();
