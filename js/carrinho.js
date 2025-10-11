@@ -39,6 +39,7 @@ botoesAdicionarAoCarrinho.forEach(botao => {
                 preco: PrecoProduto,
                 quantidade: 1
             };
+            
             carrinho.push(produto);
         }
 
@@ -93,3 +94,24 @@ function RenderizarTabelaCarrinho() {
 }
 
 RenderizarTabelaCarrinho();
+
+const corpoTabela = document.querySelector('#modal-1-content table tbody');
+corpoTabela.addEventListener('click', evento => {
+
+    if (evento.target.classList.contains('btn-deletar')) {
+        const id = evento.target.dataset.id;
+        RemoverProdutoDoCarrinho(id);
+
+    }
+
+})
+
+function RemoverProdutoDoCarrinho(id) {
+    const produtos = ObterProdutosDoCarrinho();
+
+    const CarrinhoAtualizado = produtos.filter(produto => String(produto.id) !== String(id));
+    SalvarProdutosNoCarrinho(CarrinhoAtualizado);
+    AtualizarContadorCarrinho();
+    RenderizarTabelaCarrinho();
+    
+}
