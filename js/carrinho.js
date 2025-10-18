@@ -44,8 +44,7 @@ botoesAdicionarAoCarrinho.forEach(botao => {
         }
 
         SalvarProdutosNoCarrinho(carrinho);
-        AtualizarContadorCarrinho();
-        RenderizarTabelaCarrinho();
+        AtualizarTabelaECarrinho();
     });
 });
 
@@ -68,7 +67,6 @@ function AtualizarContadorCarrinho() {
     document.getElementById("total-carrinho").textContent = total;
 }
 
-AtualizarContadorCarrinho();
 
 function RenderizarTabelaCarrinho() {
     const produtos = ObterProdutosDoCarrinho();
@@ -84,8 +82,8 @@ function RenderizarTabelaCarrinho() {
                                 </td> 
                                 <td>${produto.nome}</td>
                                 <td class="td-preco-unitario">R$ ${produto.preco.toFixed(2).replace('.', ',')}</td>
-                                <td class="td-quantidade"><input type="number" value="${produto.quantidade}" min="1"></td>
-                                <td class="td-preco-total">R$ ${produto.preco.toFixed(2).replace('.', ',')}</td>
+                                <td class="td-quantidade"><input type="number" class="input-quantidade" data-id="${produto.id}" value="${produto.quantidade}" min="1"></td>
+                                <td class="td-preco-total">R$ ${(produto.preco * produto.quantidade).toFixed(2).replace('.', ',')}</td>
                                 <td>
                                     <button class="btn-deletar" data-id="${produto.id}" id="deletar" aria-label="Remover produto do carrinho"></button>
                                 </td>`
@@ -93,7 +91,6 @@ function RenderizarTabelaCarrinho() {
     });
 }
 
-RenderizarTabelaCarrinho();
 
 const corpoTabela = document.querySelector('#modal-1-content table tbody');
 corpoTabela.addEventListener('click', evento => {
@@ -106,12 +103,43 @@ corpoTabela.addEventListener('click', evento => {
 
 })
 
+corpoTabela.addEventListener('input', evento => {
+    if (evento.target.classList.contains("input-quantidade")) {
+        const produtos = ObterProdutosDoCarrinho();
+        const produto = produtos.find(produto => produto.id === evento.target.dataset.id);
+        let novaQuantidade = parseInt(evento.target.value);
+        if (produto) {
+            produto.quantidade = novaQuantidade;
+        }
+        SalvarProdutosNoCarrinho(produtos);
+       AtualizarTabelaECarrinho();
+    }
+})
+
+
 function RemoverProdutoDoCarrinho(id) {
     const produtos = ObterProdutosDoCarrinho();
 
     const CarrinhoAtualizado = produtos.filter(produto => String(produto.id) !== String(id));
     SalvarProdutosNoCarrinho(CarrinhoAtualizado);
+   AtualizarTabelaECarrinho();
+}
+
+function AtualizarTotalCarrinho() {
+    const produtos = ObterProdutosDoCarrinho();
+    let total = 0;
+
+    produtos.forEach(produto => {
+        total += produto.preco * produto.quantidade;
+    });
+
+    document.querySelector("#valor-total-carrinho").textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+}
+
+function AtualizarTabelaECarrinho() {
     AtualizarContadorCarrinho();
     RenderizarTabelaCarrinho();
-    
+    AtualizarTotalCarrinho();
 }
+
+AtualizarTabelaECarrinho();
